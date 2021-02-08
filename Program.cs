@@ -11,17 +11,17 @@ namespace sbtftool
         [Verb("unpack", HelpText = "Unpack a .nwf file")]
         class UnpackOptions
         {
-            [Value(0, Required = true, HelpText = ".nwf file")]
+            [Value(0, Required = true, HelpText = "Path to your sbtf_pub.nwf file")]
             public string NwfFile { get; set; }
 
             [Option('o', "output", Default = "output", HelpText = "Directory to unpack files into")]
             public string Output { get; set; }
         }
 
-        [Verb("schema", HelpText = "Save the structure of a .nwf file as XML file (for use in repacking)")]
+        [Verb("schema", HelpText = "Save the structure of a sbtf_pub.nwf file as XML file (for use in repacking)")]
         class GenerateSchemaOptions
         {
-            [Value(0, Required = true, HelpText = ".nwf file to generate schema from")]
+            [Value(0, Required = true, HelpText = "sbtf_pub.nwf file to generate schema from")]
             public string NwfFile { get; set; }
 
             [Value(1, Default = "schema.xml", HelpText = "Output file location")]
@@ -34,7 +34,7 @@ namespace sbtftool
             [Value(0, Required = true, HelpText = "XML Schema file to use for the packing")]
             public string SchemaFile { get; set; }
 
-            [Value(1, Default = "output", HelpText = "Source folder containing all the assets to put into the .nwf file")]
+            [Value(1, Default = "output", HelpText = "Source folder containing all the assets to put into the sbtf_pub.nwf file")]
             public string SourceFolder { get; set; }
 
             [Value(2, Default = "sbtf_pub.nwf", HelpText = "Path of the output file")]
