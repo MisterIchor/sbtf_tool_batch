@@ -14,7 +14,7 @@ namespace sbtftool
             [Value(0, Required = true, HelpText = ".nwf file")]
             public string NwfFile { get; set; }
 
-            [Option('o', "output", Default = "output", HelpText = "Directory to unpack files into (default: output)")]
+            [Option('o', "output", Default = "output", HelpText = "Directory to unpack files into")]
             public string Output { get; set; }
         }
 
