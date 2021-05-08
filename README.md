@@ -20,4 +20,4 @@ The assets in the `output` folder can be edited. It should be possible to modify
 
 # License
 
-[This project is licensed under the GPLv3.](LICENSE)
+[This project is licensed under the CC0](LICENSE)
