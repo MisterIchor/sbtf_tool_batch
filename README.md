@@ -1,3 +1,7 @@
+# Archived
+
+This will no longer get updates and I'm abandoning this account. Anyone interested may copy this source code and do whatever they want with it, like e.g. build their own tool. Hopefully it will be useful to someone.
+
 # sbtftool
 
 Unofficial tool for extracting and repackaging game assets from [Space Beast Terror Fright](https://store.steampowered.com/app/357330/Space_Beast_Terror_Fright/).
