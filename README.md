@@ -1,6 +1,6 @@
 # Archived
 
-This will no longer get updates and I'm abandoning this account. Anyone interested may copy this source code and do whatever they want with it, like e.g. build their own tool. Hopefully it will be useful to someone.
+This will no longer get updates and I'm abandoning this account. Anyone interested may copy this source code and do whatever they want with it or claim it as their own, without credit being needed or wanted. I hope someone can make use of it. 
 
 # sbtftool
 
