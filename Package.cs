@@ -41,6 +41,7 @@ namespace sbtftool
             try
             {
                 int magic = reader.ReadInt32();
+                Console.WriteLine(magic);
                 if (magic != 0x6E776660)
                 {
                     throw new PackageParseException("Magic number is incorrect.");
