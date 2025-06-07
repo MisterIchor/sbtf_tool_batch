@@ -41,6 +41,12 @@ namespace sbtftool
             public string NwfFile { get; set; }
         }
 
+        [Verb("verify", HelpText = "Checks if the file is a valid .nwf file that can be unpacked.")]
+        class VerifyOptions
+        {
+            [Value(0, Required = true, HelpText = "The file that is being verified.")]
+            public string FileToVerify { get; set; }
+        }
         static int Main(string[] args)
         {
             // return RealMain(new string[] { "unpack", @"C:\Program Files (x86)\Steam\steamapps\common\Space Beast Terror Fright\sbtf_pub.nwf" });
@@ -54,11 +60,12 @@ namespace sbtftool
 
         static int RealMain(string[] args)
         {
-            return CommandLine.Parser.Default.ParseArguments<UnpackOptions, GenerateSchemaOptions, RepackOptions>(args)
+            return CommandLine.Parser.Default.ParseArguments<UnpackOptions, GenerateSchemaOptions, RepackOptions, VerifyOptions>(args)
                 .MapResult(
                     (UnpackOptions opts) => Unpack(opts),
                     (GenerateSchemaOptions opts) => GenerateSchema(opts),
                     (RepackOptions opts) => Repack(opts),
+                    (VerifyOptions opts) => Verify(opts),
                     (errs) => 1
                 );
         }
@@ -173,6 +180,23 @@ namespace sbtftool
             }
 
             return 0;
+        }
+
+        private static int Verify(VerifyOptions opts)
+        {
+            using var file_to_verify = File.OpenRead(opts.FileToVerify);
+            var is_success = Package.VerifyFile(file_to_verify);
+
+            if (is_success)
+            {
+                Console.WriteLine("File successfully verified.");
+                return 0;
+            }
+            else
+            {
+                Console.WriteLine("File verification failed. File must be a sbtf_pub.swf from update 60.");
+                return 115;
+            }
         }
     }
 }

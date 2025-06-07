@@ -33,6 +33,14 @@ namespace sbtftool
     {
         [DataMember] public List<PackageFile> Files { get; private set; }
 
+        public static bool VerifyFile(Stream file)
+        {
+            using BinaryReader reader = new BinaryReader(file);
+            int magic = reader.ReadInt32();
+
+            return magic == 0x6E776660;
+        }
+
         public static Package ReadPackageFromNwf(Stream file)
         {
             using BinaryReader reader = new BinaryReader(file, Encoding.ASCII, true);
