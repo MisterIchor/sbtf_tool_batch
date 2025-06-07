@@ -1,6 +1,6 @@
-# Archived
+This is a modified version of [SBTFTool](https://github.com/SquidingTin/sbtf_tool_batch/tree/main) by SquidingTin to allow .nwf file verification without having to extract the game files. Used by [SBTF Mod Manager/Creator](https://github.com/MisterIchor/sbtf-mod-manager-creator).
 
-This will no longer get updates and I'm abandoning this account. Anyone interested may copy this source code and do whatever they want with it or claim it as their own, without credit being needed or wanted. I hope someone can make use of it. 
+# Original Description
 
 # sbtftool
 
